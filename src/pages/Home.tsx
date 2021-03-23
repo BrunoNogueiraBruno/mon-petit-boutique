@@ -1,6 +1,10 @@
+import ProductsDisplay from "../components/ProductsDisplay";
+
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <ProductsDisplay />
+    </div>
   )
 };
 
