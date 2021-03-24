@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { GlobalContext } from '../contexts/GlobalContext';
 import styles from '../styles/components/Register.module.css';
 
 export default function Register() {
-  const { setShowRegister } = useContext(GlobalContext);
+  const { setShowRegister, handleDisplayCart } = useContext(GlobalContext);
   const [costumerName, setCostumerName] = useState('');
   const [costumerCPF, setCostumerCPF] = useState(0);
+
   const getCart: any = localStorage.getItem('cart');
   const cart = JSON.parse(getCart);
 
@@ -39,22 +41,35 @@ export default function Register() {
               type="number"
             />
           </label>
+
           <button
             className={styles.sendBtn}
             onClick={() => {
-              localStorage.setItem(
-                `costumer-${costumerName}`,
-                JSON.stringify({
-                  name: costumerName,
-                  cpf: costumerCPF,
-                  order: cart,
-                })
-              )
+              setShowRegister(false);
+              handleDisplayCart();
               localStorage.removeItem('cart');
+
+              const newCostumer = {
+                name: costumerName,
+                cpf: costumerCPF,
+                order: cart,
+              }
+              const getCostumers: any = localStorage.getItem('list-costumers');
+              if (getCostumers === null) {
+                localStorage.setItem('list-costumers', JSON.stringify([newCostumer]));
+              } else {
+                const costumers = JSON.parse(getCostumers);
+                costumers.push(newCostumer);
+
+                localStorage.setItem('list-costumers', JSON.stringify(costumers))
+              }
+
             }}
             type="button"
           >
-            Enviar
+            <Link to={"/orders"}>
+              Enviar
+            </Link>
           </button>
         </div>
       </div>
