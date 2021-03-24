@@ -4,55 +4,63 @@
     "name": "Caixa de Chocolates",
     "image": "/images/products/chocolate.jpeg",
     "description": "Caixa de chocalates aromatizados feitos pela consagrada chocolateria francesa Monbana.",
-    "price": 89.99
+    "price": 89.99,
+    "quantity": 1
   },
   {
     "id": 1,
     "name": "Globo Terrestre",
     "image": "/images/products/globo-terrestre.jpeg",
     "description": "Globo atualizado, fabricado em plático e com suporte de madeira.",
-    "price": 59.99
+    "price": 59.99,
+    "quantity": 1
   },
   {
     "id": 2,
     "name": "Jambon",
     "image": "/images/products/jambon.jpeg",
     "description": "Presunto francês curado com sal.",
-    "price": 139.99
+    "price": 139.99,
+    "quantity": 1
   },
   {
     "id": 3,
     "name": "Les Miserables",
     "image": "/images/products/les-miserables-livre.jpeg",
     "description": "Livro do autor francês Victor Hugo.",
-    "price": 74.99
+    "price": 74.99,
+    "quantity": 1
   },
   {
     "id": 4,
     "name": "Arsène Lupin, Gentleman Cambrioleur",
     "image": "/images/products/lupin-livre.jpeg",
     "description": "Livro do autor francês Maurice Leblanc.",
-    "price": 53.99
+    "price": 53.99,
+    "quantity": 1
   },
   {
     "id": 5,
     "name": "Champagne Mumm Millésime 2013",
     "image": "/images/products/mumm-millesime.jpg",
     "description": "Champagne de sabor frutado, para celebrar ocasiões importantes.",
-    "price": 219.99
+    "price": 219.99,
+    "quantity": 1
   },
   {
     "id": 6,
     "name": "Perfume CHHC",
     "image": "/images/products/perfume.jpeg",
     "description": "Aroma adocidado de uma agradável fragância floral.",
-    "price": 159.99
+    "price": 159.99,
+    "quantity": 1
   },
   {
     "id": 7,
     "name": "Souvenir Paris Torre Eiffel",
     "image": "/images/products/souvenir.jpeg",
     "description": "Lembrança vinda direto de Paris.",
-    "price": 3.99
+    "price": 3.99,
+    "quantity": 1
   }
 ]

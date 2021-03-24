@@ -8,8 +8,8 @@
 </a>
 
 ## Requisitos:
-- [ x ] Desenvolver catálogo de produtos (pode ser fixo, de 8 a 10): com descrição, foto e preço;
-- [ ] Desenvolver carrinho de compras, com opções de adicionar, alterar quantidade e remover. Atualizando os subtotais e o total geral;
+- [x] Desenvolver catálogo de produtos (pode ser fixo, de 8 a 10): com descrição, foto e preço;
+- [x] Desenvolver carrinho de compras, com opções de adicionar, alterar quantidade e remover. Atualizando os subtotais e o total geral;
 - [ ] Desenvolver botão de finalizar pedido: solicitar ao usuário o Nome e o CPF;
 - [ ] Desenvolver página de pedidos: exibindo os pedidos enviados no catálogo, com opção de filtrar por nome de cliente;
 - [ ] Clicando em um pedido os detalhes devem ser exibidos:

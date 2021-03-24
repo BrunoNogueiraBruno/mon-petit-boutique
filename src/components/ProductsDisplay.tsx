@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { ProductsContext } from "../contexts/ProductsContext";
+import { GlobalContext } from "../contexts/GlobalContext";
 import ProductCard from "./ProductCard";
 import styles from "../styles/components/ProductsDisplay.module.css";
 
 export default function ProductsDisplay() {
-  const { listOfProducts } = useContext(ProductsContext);
+  const { listOfProducts } = useContext(GlobalContext);
 
   function getCards() {
     const listOfCards: JSX.Element[] = [];
 
     listOfProducts.forEach((product) => {
       listOfCards.push(
-        <ProductCard key={`product-${product.id}`} list={product} />
+        <ProductCard key={`product-${product.id}`} product={product} />
       )
     });
 
@@ -20,7 +20,9 @@ export default function ProductsDisplay() {
 
   return (
     <section className={styles.productsDisplayContainer}>
-      {getCards()}
+      <div>
+        {getCards()}
+      </div>
     </section>
   )
 };

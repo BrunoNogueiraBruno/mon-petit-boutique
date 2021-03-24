@@ -7,6 +7,9 @@
 :root {
   --white: #fff;
   --background: #f2f3f5;
+  --royal-blue: #0074B7;
+  --gray: #37393a;
+  --burgundy: #BA0F30;
   --text: #000000;
 }
 
@@ -32,7 +35,13 @@ body, input, textarea, button {
 }
 
 button {
+  background: none;
+  border: none;
   cursor: pointer;
+}
+
+button:focus {
+  outline: none;
 }
 
 a {

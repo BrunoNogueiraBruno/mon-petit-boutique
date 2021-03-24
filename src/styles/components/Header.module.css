@@ -1,0 +1,38 @@
+.headerContainer {
+  align-items: center;
+  background-color: var(--royal-blue);
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  z-index: 2;
+}
+
+.headerContainer > div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 80%;
+}
+
+.headerContainer > div > div {
+  align-items: center;
+  display: flex;
+}
+
+.franceFlag {
+  margin-right: 1rem;
+  width: 10%;
+}
+
+.headerContainer h1 {
+  color: var(--white);
+  font-size: 1.8em;
+}
+
+.headerContainer svg {
+  fill: var(--white);
+  height: 50px;
+  width: 50px;
+}
