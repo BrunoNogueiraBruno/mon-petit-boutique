@@ -82,3 +82,20 @@
 .removeBtn:hover {
   color: #da1a40;
 }
+
+.totalDisplay {
+  font-size: 1.3em;
+  margin-bottom: 1rem;
+}
+
+.finishBtn {
+  background: var(--green);
+  border-radius: 4rem;
+  font-size: 1.3em;
+  padding: 0.3rem;
+  width: 90%;
+}
+
+.finishBtn:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.37);
+}

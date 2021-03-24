@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { GlobalContext } from '../contexts/GlobalContext';
 import styles from '../styles/components/Header.module.css';
 
@@ -14,7 +15,15 @@ export default function Header() {
             src="/images/france-flag.png"
             alt="Bandeira da França"
           />
-          <h1>Mon Petit Boutique</h1>
+          <Link to={"/"}>
+            <h1>Mon Petit Boutique</h1>
+          </Link>
+        </div>
+
+        <div className={styles.link}>
+          <Link to={"/orders"}>
+            Pedidos
+          </Link>
         </div>
 
         <button
