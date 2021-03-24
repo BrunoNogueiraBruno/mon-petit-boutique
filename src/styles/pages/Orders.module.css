@@ -48,3 +48,17 @@
 .products img {
   width: 80px;
 }
+
+li {
+  list-style-type: none;
+}
+
+.title {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.detailsBtn {
+  width: 50px;
+}

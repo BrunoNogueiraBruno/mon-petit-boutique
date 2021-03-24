@@ -1,3 +1,4 @@
+import React, { useCallback } from 'react';
 import { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '../contexts/GlobalContext';
 import styles from "../styles/components/Cart.module.css";
@@ -15,6 +16,7 @@ interface Product {
 interface ProductData {
   product: Product,
 }
+
 export default function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
   const { showRegister, setShowRegister } = useContext(GlobalContext);

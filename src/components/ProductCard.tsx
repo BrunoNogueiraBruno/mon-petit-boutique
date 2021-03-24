@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styles from '../styles/components/ProductCard.module.css';
 interface Product {
   id: number,
