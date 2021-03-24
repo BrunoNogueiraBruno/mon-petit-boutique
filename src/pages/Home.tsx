@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Cart from "../components/Cart";
-import Header from "../components/Header";
+import Header from '../components/Header';
 import ProductsDisplay from "../components/ProductsDisplay";
 import { GlobalContext } from "../contexts/GlobalContext";
 import styles from "../styles/pages/Home.module.css";

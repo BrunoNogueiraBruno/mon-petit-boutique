@@ -1,0 +1,66 @@
+.registerContainer {
+  align-items: center;
+  justify-content: center;
+  background: #37393a9f;
+  backdrop-filter: blur(10px);
+  display: flex;
+  height: 100vh;
+  position: fixed;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+}
+
+.registerContent {
+  align-items: flex-start;
+  background: var(--white);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 0.7rem 0;
+  height: 30vh;
+  width: 30vw;
+}
+
+.removeBtn {
+  color: var(--gray);
+  position: relative;
+  width: 15%;
+}
+
+.removeBtn:hover {
+  color: #da1a40;
+}
+
+.removeBtn svg {
+  width: 40px;
+}
+
+.registerContent > div {
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 80%;
+  display: flex;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.registerContent > div label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sendBtn {
+  background: var(--green);
+  font-size: 1.5em;
+  border-radius: 1rem;
+  width: 30%;
+}
+
+.sendBtn:hover {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.178);
+}

@@ -36,3 +36,8 @@
   height: 50px;
   width: 50px;
 }
+
+.link {
+  color: var(--white);
+  font-size: 2em;
+}
