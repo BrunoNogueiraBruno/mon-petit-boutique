@@ -1,15 +1,15 @@
 import React from 'react';
-import { ProductsProvider } from './contexts/ProductsContext';
+import { GlobalProvider } from './contexts/GlobalContext';
 import Home from './pages/Home';
 import "./styles/global.css";
 
 function App() {
   return (
-    <ProductsProvider>
+    <GlobalProvider>
       <div className="App">
         <Home />
       </div>
-    </ProductsProvider>
+    </GlobalProvider>
   );
 }
 

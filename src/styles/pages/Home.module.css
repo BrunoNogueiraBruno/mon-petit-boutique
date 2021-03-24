@@ -1,0 +1,9 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.homeContent {
+  display: flex;
+  grid-area: content;
+}
