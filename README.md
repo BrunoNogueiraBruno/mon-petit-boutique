@@ -1,4 +1,11 @@
 #  Mon Petit Boutique | Teste de React
+## Resultado:
+<a href="https://mon-petit-boutique.vercel.app/">
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpagepro.co%2Fblog%2Fwp-content%2Fuploads%2F2020%2F11%2Fvercel-logo.png&f=1&nofb=1" alt="preview" width=200px />
+</a>
+<a href="https://github.com/BrunoNogueiraBruno/mon-petit-boutique">
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.dtNE8IQSVDx0zNH7JJPWBwAAAA%26pid%3DApi&f=1" alt="repositório" width=100px />
+</a>
 
 ## Requisitos:
 - [x] Desenvolver catálogo de produtos (pode ser fixo, de 8 a 10): com descrição, foto e preço;
