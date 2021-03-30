@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react';
 import { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '../contexts/GlobalContext';
 import styles from "../styles/components/Cart.module.css";
@@ -23,7 +22,7 @@ export default function Cart() {
   const getCart: any = localStorage.getItem('cart');
   const cart = JSON.parse(getCart);
 
-  useEffect(() => {
+  function calcTotal() {
     if (getCart !== null) {
       const listOfPrices: number[] = [];
       cart.forEach(({ product }: ProductData) => {
@@ -32,6 +31,10 @@ export default function Cart() {
       const sum = listOfPrices.reduce((acc, cur) => acc + cur, 0);
       setTotalPrice(Number(sum + totalPrice));
     }
+  }
+
+  useEffect(() => {
+    calcTotal();
   }, [getCart]);
 
   return (
@@ -42,7 +45,6 @@ export default function Cart() {
         )
       }
       <section className={styles.cartContainer}>
-
         <div className={styles.productsDisplay}>
           {
             getCart !== null && (

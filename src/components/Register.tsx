@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { GlobalContext } from '../contexts/GlobalContext';
 import styles from '../styles/components/Register.module.css';
 
@@ -10,6 +10,8 @@ export default function Register() {
 
   const getCart: any = localStorage.getItem('cart');
   const cart = JSON.parse(getCart);
+
+  const history = useHistory();
 
   return (
     <div className={styles.registerContainer}>
@@ -45,31 +47,34 @@ export default function Register() {
           <button
             className={styles.sendBtn}
             onClick={() => {
-              setShowRegister(false);
-              handleDisplayCart();
-              localStorage.removeItem('cart');
+              if (costumerName !== '' || costumerCPF !== 0) {
+                setShowRegister(false);
+                handleDisplayCart();
+                localStorage.removeItem('cart');
 
-              const newCostumer = {
-                name: costumerName,
-                cpf: costumerCPF,
-                order: cart,
-              }
-              const getCostumers: any = localStorage.getItem('list-costumers');
-              if (getCostumers === null) {
-                localStorage.setItem('list-costumers', JSON.stringify([newCostumer]));
+                const newCostumer = {
+                  name: costumerName,
+                  cpf: costumerCPF,
+                  order: cart,
+                }
+                const getCostumers: any = localStorage.getItem('list-costumers');
+                if (getCostumers === null) {
+                  localStorage.setItem('list-costumers', JSON.stringify([newCostumer]));
+                } else {
+                  const costumers = JSON.parse(getCostumers);
+                  costumers.push(newCostumer);
+
+                  localStorage.setItem('list-costumers', JSON.stringify(costumers))
+                }
+                history.push("/orders")
               } else {
-                const costumers = JSON.parse(getCostumers);
-                costumers.push(newCostumer);
-
-                localStorage.setItem('list-costumers', JSON.stringify(costumers))
+                alert("Adicione as informações do usuário!")
               }
 
             }}
             type="button"
           >
-            <Link to={"/orders"}>
-              Enviar
-            </Link>
+            Enviar
           </button>
         </div>
       </div>

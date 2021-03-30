@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styles from '../styles/components/ProductCard.module.css';
 interface Product {
   id: number,
@@ -15,6 +16,7 @@ interface ProductData {
 
 export default function ProductCard({ product }: ProductData) {
   const { id, name, image, price, description } = product;
+  const [currentProductQuantity, setCurrentProductQuantity] = useState(0);
 
   function getLocalStorage() {
     const getCart: any = localStorage.getItem('cart');
@@ -25,6 +27,7 @@ export default function ProductCard({ product }: ProductData) {
 
         if (product.id === currProduct.id) {
           cart[index].product.quantity += 1;
+          setCurrentProductQuantity(cart[index].product.quantity);
           productYetInCart = true;
         }
       })
