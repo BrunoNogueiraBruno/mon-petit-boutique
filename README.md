@@ -16,7 +16,7 @@
 	1. cliente;
 	2. produtos ( descrição, quantidade, valor unitário e subtotal );
 	3. total geral;
-
+ 
 ## Importante:
 1. Não precisa criar API;
 2. O gerenciamento das informações e persistência faz parte do teste;
