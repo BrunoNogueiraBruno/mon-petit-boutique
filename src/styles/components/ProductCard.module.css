@@ -43,3 +43,15 @@
 .addToCartBtn:focus {
   outline: none;
 }
+
+.displayCurrQuantity {
+  align-items: center;
+  background: var(--white);
+  color: var(--burgundy);
+  display: flex;
+  justify-content: center;
+  font-size: 0.6em;
+  border-radius: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
