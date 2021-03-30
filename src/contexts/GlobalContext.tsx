@@ -15,7 +15,9 @@ interface GlobalContextData {
   displayCart: boolean,
   handleDisplayCart: () => void,
   showRegister: boolean,
-  setShowRegister: any
+  setShowRegister: any,
+  productsInCart: ProductData[],
+  updateProductsInCart: any,
 }
 
 interface GlobalProviderData {
@@ -28,9 +30,14 @@ export function GlobalProvider({ children }: GlobalProviderData) {
   const [listOfProducts] = useState(products);
   const [displayCart, setDisplayCart] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
+  const [productsInCart, setProductsInCart] = useState([]);
 
   function handleDisplayCart() {
     setDisplayCart(!displayCart);
+  }
+
+  function updateProductsInCart(list: any) {
+    setProductsInCart(list);
   }
 
   return (
@@ -41,6 +48,8 @@ export function GlobalProvider({ children }: GlobalProviderData) {
         handleDisplayCart,
         showRegister,
         setShowRegister,
+        productsInCart,
+        updateProductsInCart,
       }}
     >
       {children}

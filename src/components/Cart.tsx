@@ -18,24 +18,25 @@ interface ProductData {
 
 export default function Cart() {
   const [totalPrice, setTotalPrice] = useState(0);
-  const { showRegister, setShowRegister } = useContext(GlobalContext);
+  const { showRegister, setShowRegister, productsInCart, updateProductsInCart } = useContext(GlobalContext);
   const getCart: any = localStorage.getItem('cart');
   const cart = JSON.parse(getCart);
+  const numberOfProducts = getCart !== null ? cart.length : 0
 
   function calcTotal() {
     if (getCart !== null) {
       const listOfPrices: number[] = [];
-      cart.forEach(({ product }: ProductData) => {
-        listOfPrices.push(Number(product.price * product.quantity));
+      cart.forEach(({ product }: any) => {
+        listOfPrices.push(product.price * product.quantity);
       })
-      const sum = listOfPrices.reduce((acc, cur) => acc + cur, 0);
-      setTotalPrice(Number(sum + totalPrice));
+      const result: number = listOfPrices.reduce((cur, acc) => cur + acc, 0);
+      setTotalPrice(result);
     }
   }
 
   useEffect(() => {
     calcTotal();
-  }, [getCart]);
+  }, [productsInCart])
 
   return (
     <div>
@@ -86,6 +87,7 @@ export default function Cart() {
                             cart.splice(index, 1);
                           }
                           localStorage.setItem("cart", JSON.stringify(cart));
+                          updateProductsInCart(cart);
                         }}
                       >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -102,13 +104,19 @@ export default function Cart() {
         <div className={styles.totalDisplay}>
           {`Valor Total: R$ ${totalPrice.toFixed(2)}`}
         </div>
-        <button
-          type="button"
-          className={styles.finishBtn}
-          onClick={() => setShowRegister(!showRegister)}
-        >
-          Finalizar Compra
-        </button>
+        {
+          numberOfProducts !== 0 ? (
+            <button
+              type="button"
+              className={styles.finishBtn}
+              onClick={() => setShowRegister(!showRegister)}
+            >
+              Finalizar Compra
+            </button>
+          ) : (
+            <span>Adicione alguns itens antes de finalizar a compra!</span>
+          )
+        }
       </section>
     </div>
   )
